@@ -1,5 +1,5 @@
 ### PROGRAM NAME ###
-NAME		:= Zombie
+NAME		:= ex02
 
 ### UTILS ###
 CC 			:= c++
@@ -29,7 +29,7 @@ OBJS_DIR 	:= objs
 
 
 ### FILES ###
-SRC 		:=	main.cpp 
+SRC 		:=	main.cpp
 OBJS 		:= ${patsubst %.cpp,${OBJS_DIR}/%.o,${SRC}}
 DEPS		:= ${patsubst %.cpp,${OBJS_DIR}/%.d,${SRC}}
 

@@ -1,5 +1,5 @@
 ### PROGRAM NAME ###
-NAME		:= Zombie
+NAME		:= ex00
 
 ### UTILS ###
 CC 			:= c++

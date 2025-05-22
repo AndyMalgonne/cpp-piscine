@@ -1,5 +1,5 @@
 ### PROGRAM NAME ###
-NAME		:= violence
+NAME		:= ex03
 
 ### UTILS ###
 CC 			:= c++
