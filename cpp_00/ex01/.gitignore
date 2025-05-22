@@ -1,6 +1,7 @@
-megaphone
+PhoneBook
 objs/
 .vscode
 .dist
 *.d
 *.o
+.DS_Store
