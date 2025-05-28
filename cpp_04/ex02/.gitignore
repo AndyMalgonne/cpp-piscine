@@ -1,0 +1,7 @@
+objs/
+.vscode
+.dist
+*.d
+*.o
+.DS_Store
+ex02
