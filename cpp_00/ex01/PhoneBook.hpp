@@ -16,6 +16,7 @@ class PhoneBook
 	private:
 		Contact contacts[8];
 		int		counter;
+		int		index;
 };
 
 #endif

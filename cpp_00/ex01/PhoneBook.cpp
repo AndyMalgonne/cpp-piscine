@@ -2,8 +2,10 @@
 
 PhoneBook::PhoneBook()
 {
-	this->counter = 0;
+    this->counter = 0;
+    this->index = 0;
 }
+
 
 bool	isNumber(const std::string& str)
 {
@@ -26,11 +28,11 @@ bool	isValidChar(const std::string& str)
 }
 
 
-void	PhoneBook::addContact()
+void PhoneBook::addContact()
 {
-	std::string	input;
+    std::string input;
 
-	while (true)
+    while (true)
     {
         std::cout << "type the Firstname :";
         std::getline(std::cin, input);
@@ -40,57 +42,65 @@ void	PhoneBook::addContact()
             break;
         std::cout << "you have to type something in ..." << std::endl;
     }
-    this->contacts[counter].setFirstName(input);
-	while (true)
-	{
-		std::cout << "type the Lastname :";
-		std::getline(std::cin, input);
-		if (std::cin.eof())
-			return;
-		if (!input.empty() && isValidChar(input))
-			break;
-		std::cout << "you have to type something in ..." << std::endl;
-	}
-	this->contacts[counter].setLastName(input);
-	while (true)
-	{
-		std::cout << "type the Nickname :";
-		std::getline(std::cin, input);
-		if (std::cin.eof())
-			return;
-		if (!input.empty() && isValidChar(input))
-			break;
-		std::cout << "you have to type something in ..." << std::endl;
-	}
-	this->contacts[counter].setNickName(input);
-	while (true)
-	{
-		std::cout << "type the Phone number :";
-		std::getline(std::cin, input);
-		if (std::cin.eof())
-			return;
-		if  (!input.empty() && isNumber(input))
-			break;
-		std::cout << "you have to type something in ..." << std::endl;
-	}
-	this->contacts[counter].setPhoneNumber(input);
-	while (true)
-	{
-		std::cout << "type the Darkest secret :";
-		std::getline(std::cin, input);
-		if (std::cin.eof())
-			return;
-		if (!input.empty() && isValidChar(input))
-			break;
-		std::cout << "you have to type something in ..." << std::endl;
-	}
-	this->contacts[counter].setDarkestSecret(input);
-	this->counter++;
-	if (this->counter == 8)
-		this->counter = 0;
-	std::cout << "Contact added successfully!" << std::endl;
-	std::cout << "You can add another contact" << std::endl;
+    this->contacts[index].setFirstName(input);
+
+    while (true)
+    {
+        std::cout << "type the Lastname :";
+        std::getline(std::cin, input);
+        if (std::cin.eof())
+            return;
+        if (!input.empty() && isValidChar(input))
+            break;
+        std::cout << "you have to type something in ..." << std::endl;
+    }
+    this->contacts[index].setLastName(input);
+
+    while (true)
+    {
+        std::cout << "type the Nickname :";
+        std::getline(std::cin, input);
+        if (std::cin.eof())
+            return;
+        if (!input.empty() && isValidChar(input))
+            break;
+        std::cout << "you have to type something in ..." << std::endl;
+    }
+    this->contacts[index].setNickName(input);
+
+    while (true)
+    {
+        std::cout << "type the Phone number :";
+        std::getline(std::cin, input);
+        if (std::cin.eof())
+            return;
+        if (!input.empty() && isNumber(input))
+            break;
+        std::cout << "you have to type something in ..." << std::endl;
+    }
+    this->contacts[index].setPhoneNumber(input);
+
+    while (true)
+    {
+        std::cout << "type the Darkest secret :";
+        std::getline(std::cin, input);
+        if (std::cin.eof())
+            return;
+        if (!input.empty() && isValidChar(input))
+            break;
+        std::cout << "you have to type something in ..." << std::endl;
+    }
+    this->contacts[index].setDarkestSecret(input);
+
+    // Circular update logic
+    index = (index + 1) % 8;
+    if (counter < 8)
+        counter++;
+
+    std::cout << "Contact added successfully!" << std::endl;
+    std::cout << "You can add another contact" << std::endl;
 }
+
 
 std::string formatField(const std::string& str)
 {
