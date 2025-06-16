@@ -31,6 +31,8 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
+	delete meta_w;
+	delete j_w;
 
 	return 0;
 }
