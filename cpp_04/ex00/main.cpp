@@ -34,6 +34,7 @@ int main()
 	delete i;
 	delete meta_w;
 	delete j_w;
+	delete k_w;
 
 	return 0;
 }
