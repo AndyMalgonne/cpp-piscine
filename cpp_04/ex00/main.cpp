@@ -23,9 +23,10 @@ int main()
 
 	const WrongAnimal* meta_w = new WrongAnimal();
 	const WrongAnimal* j_w = new WrongCat();
+	const WrongCat* k_w = new WrongCat();
 	meta_w->makeSound();
 	j_w->makeSound();
-
+	k_w->makeSound();
 	std::cout << std::endl;
 
 	delete meta;
