@@ -1,0 +1,10 @@
+objs/
+.vscode
+.dist
+*.d
+*.o
+.DS_Store
+ex02
+Admin_shrubbery
+Moderator_shrubbery
+Super-Admin_shrubbery
